@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcamera_calibration.a  CMakeFiles/camera_calibration.dir/src/LoadData.cpp.o CMakeFiles/camera_calibration.dir/src/KeyPointsMaker.cpp.o CMakeFiles/camera_calibration.dir/src/PNPSolver.cpp.o
+/usr/bin/ranlib libcamera_calibration.a
