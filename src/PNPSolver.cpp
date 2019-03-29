@@ -3,6 +3,7 @@
 //
 
 #include <PNPSolver.h>
+#include <boost/timer.hpp>
 
 using namespace std;
 using namespace cv;
@@ -51,7 +52,9 @@ void PNPSolver::FindMatches(int test_image_number)
     //     cout << keypoints.at(i).pt << endl;
     cout << "test image descriptor number = " << descriptors.rows << endl;
     std::vector<cv::DMatch> matches;
+    boost::timer timer;
     matcher->match ( descriptors, KeyPoints.train_descriptor, matches );
+    cout<<"find matches cost time: "<<timer.elapsed() <<endl;
     cout << "raw match number = " << matches.size() << endl;
     //--------- 选择好的match -----------------------------------------------------
     std::cout << "get good matches from row matches ...... " << std::endl;
